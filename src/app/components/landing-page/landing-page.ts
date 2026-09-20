@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.scss',
 })
-export class LandingPage {}
+export class LandingPage {
+
+  helloWorld: string = "Hello World";
+
+
+  changeHW(){
+    this.helloWorld = "I'm Riccardo Schöpf";
+  }
+}

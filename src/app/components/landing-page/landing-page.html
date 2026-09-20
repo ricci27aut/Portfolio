@@ -14,11 +14,26 @@
     </header>
 
     <article>
-        <div class="landing-content">
-            <span>Hello World</span>
-            <h1>Frontend Developer</h1>
-            <a><span>Get in Touch</span></a>
-        </div>
+
+        <div class="landing-content-wrapper">
+
+            <div class="landing-content">
+                <span class="hello-world" (mouseenter)="changeHW()"
+                    (mouseleave)="helloWorld='Hello World'">{{helloWorld}}<img
+                        [class.dnone]="helloWorld==='Hello World'" src="assets/icons/waving_hand.png"></span>
+                <div class="poll-container">
+                    <h1>Frontend</h1>
+                    <div class="pol-img"></div>
+                </div>
+            </div>
+
+            <div class="landing-content secent-title-section">
+                <h1>Developer</h1>
+                <div class="get-in-touch-container"><a><span class="get-in-touch">Get in Touch</span></a></div>
+            </div>
+
+</div>
+
         <div class="social-icons">
             <p><img src="assets/icons/git-icon.png"></p>
             <p><img src="assets/icons/mail-icon.png"></p>
