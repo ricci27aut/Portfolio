@@ -1,0 +1,23 @@
+ @use '../../../../styles.scss' as colors;
+
+ .get-in-touch {
+    display: inline-block;
+     cursor: pointer;
+     border-radius: 30px;
+     padding: 10px 20px;
+     color: var(--btn-color);
+     border: 1px solid var(--btn-color);
+     box-shadow: 3px 3px var(--btn-color);
+
+     transition:
+         transform 0.15s ease,
+         box-shadow 0.15s ease;
+
+      &:hover {
+        background-color: colors.$btn-hover;
+
+        transform: translate(3px, 3px);
+
+        box-shadow: 0 0 var(--btn-color);
+    }
+ }

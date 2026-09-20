@@ -1,0 +1,42 @@
+<section>
+    <header>
+        <h2>RS</h2>
+        <div class="nav-links">
+            <a>About me</a>
+            <a>Skills</a>
+            <a>Projects</a>
+            <a>Contact</a>
+        </div>
+        <div class="language-switcher">
+            <p>EN</p><img src="assets/icons/slider/slider-on.png">
+            <p>DE</p>
+        </div>
+    </header>
+
+    <article>
+
+        <div class="landing-content-wrapper">
+
+            <div class="landing-content">
+                <span class="hello-world" (mouseenter)="changeHW()"
+                    (mouseleave)="helloWorld='Hello World'">{{helloWorld}}<img
+                        [class.dnone]="helloWorld==='Hello World'" src="assets/icons/waving_hand.png"></span>
+                <div class="poll-container">
+                    <h1>Frontend</h1>
+                    <div class="pol-img"></div>
+                </div>
+            </div>
+
+            <div class="landing-content secent-title-section">
+                <h1>Developer</h1>
+                <div class="get-in-touch-container"><app-to-form-btn></app-to-form-btn></div>
+            </div>
+
+</div>
+
+        <div class="social-icons">
+            <p><img src="assets/icons/git-icon.png"></p>
+            <p><img src="assets/icons/mail-icon.png"></p>
+        </div>
+    </article>
+</section>
