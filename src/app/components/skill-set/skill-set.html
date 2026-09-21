@@ -1,0 +1,13 @@
+<section class="skill-set">
+    <article class="header">
+        <div class="title-container"><p>MY STACK</p><h1>Skill set <img src="assets/icons/text-decoration/decoration-circle-orange.png"></h1></div>
+        <p class="text-area">A short introduction of your skills. Highlight your experience of using different front-end technologies and
+            emphasise your openness to learning and adapting to new technologies. </p>
+    </article>
+    <article class="skills">
+        <div class="skill-icon-container">
+            <div class="skill-icon-container" *ngFor="let skill of skills"><img src="assets/icons/skills/{{skill.name}}.svg"><h2>{{ skill.name }}</h2></div>
+        </div>
+        <div class="papper-pull-container" [ngClass]="{'pull-over': isPulledOver, 'pull-over-reverse': !isPulledOver}" (click)="animation()"></div>
+    </article>
+</section>

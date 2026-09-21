@@ -1,0 +1,107 @@
+@use '../../../styles.scss' as *;
+
+.colleagues {
+    width: 100%;
+    height: 600px;
+    background-color: $color-white-primary;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+.colleagues-header {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+    padding-right: 20px;
+
+    .suptittle-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        p {
+            font-size: 20px;
+            font-weight: medium;
+            font-weight: 500;
+        }
+    }
+
+    h1 {
+        font-size: 64px;
+        font-weight: bold;
+        font-weight: 700;
+    }
+
+    img {
+        width: 100px;
+        height: 36px;
+    }
+
+}
+
+.colleagues-notes {
+    width: 70%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 20px;
+
+    .note-style {
+        background-image: url('/assets/images/red-note-1.png');
+        background-size: 512px 320px;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 515px;
+        height: 325px;
+        padding: 50px;
+
+        .name-area{
+            height: 80%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            h3{
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+
+
+    .note-1 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
+        transform: rotate(-10deg);
+    }
+
+    .note-2 {
+        z-index: 2;
+
+        &:hover {
+            z-index: 5;
+        }
+    }
+
+    .note-3 {
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: rotate(10deg);
+        z-index: 1;
+
+        &:hover {
+            z-index: 5;
+        }
+    }
+}

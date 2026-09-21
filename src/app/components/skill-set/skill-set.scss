@@ -1,0 +1,190 @@
+@use '../../../styles.scss' as colors;
+
+.skill-set {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    background-color: colors.$color-white-primary;
+    background-image: url(/assets/backgrounds/background-skill-set.png);
+    background-size: 100% 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header {
+    max-width: 1240px;
+    width: 100%;
+    color: colors.$color-white-primary;
+    display: flex;
+    gap: 50px;
+    margin-bottom: 70px;
+    box-sizing: border-box;
+
+    .text-area {
+        color: black;
+        background-image: url(/assets/images/ripped-paper/ripped-paper-withe.png);
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 144px;
+        width: 656px;
+        display: flex;
+        align-items: center;
+        justify-content: centser;
+        text-align: start;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+
+    .title-container {
+        p {
+            font-size: 20px;
+            font-weight: 500;
+            font-style: medium;
+            text-align: end;
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 64px;
+            font-weight: 700;
+            font-style: bold;
+            padding: 5px;
+            overflow: hidden;
+
+            img {
+                width: 220px;
+                height: 80px;
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                right: 0;
+                animation: float 5s ease-in-out infinite;
+                transform-origin: top right;
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                }
+
+                40% {
+                    transform: translateY(0) rotate(0deg);
+                }
+
+                42% {
+                    transform: translateY(-50px) rotate(180deg);
+                }
+
+                70% {
+                    transform: translateY(-50px) rotate(180deg);
+                }
+
+                88% {
+                    transform: translateY(-50px) rotate(180deg);
+                }
+
+                90% {
+                    transform: translateY(0) rotate(0deg);
+                }
+
+                100% {
+                    transform: translateY(0) rotate(0deg);
+                }
+
+            }
+        }
+    }
+}
+
+.skills {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 840px;
+    min-height: 266px;
+
+    .skill-icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .skill-icon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 130px;
+            height: 120px;
+
+            h2 {
+                font-size: 18px;
+                font-weight: 400;
+                font-style: regular;
+                color: colors.$color-white-primary;
+                margin: 0;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            img {
+                width: 72px;
+                height: 72px;
+                filter: grayscale(100%);
+                transform: scale(1);
+                transition: 0.3s ease;
+
+                &:hover {
+                    filter: grayscale(0%);
+                    transform: scale(0.8);
+                }
+            }
+        }
+    }
+}
+
+.papper-pull-container {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    right: -200px;
+    transform: rotate(8deg);
+    background-image: url('/assets/icons/skills/papper-pull/papper-pull-1.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pull-over {
+    animation: pull-over 0.3s forwards;
+}
+
+.pull-over-reverse{
+    animation: pull-over 0.3s reverse;
+}
+
+@keyframes pull-over {
+    0% {
+        background-image: url('/assets/icons/skills/papper-pull/papper-pull-1.svg');
+    }
+
+    50% {
+        background-image: url('/assets/icons/skills/papper-pull/papper-pull-2.svg');
+    }
+
+    100% {
+        background-image: url('/assets/icons/skills/papper-pull/papper-pull-3.svg');
+    }
+}

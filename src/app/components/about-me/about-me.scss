@@ -90,23 +90,43 @@ article {
         flex-direction: column;
         margin-bottom: 50px;
 
-        img {
+        .text-decoration {
             width: 280px;
             height: 20px;
+            transform: scale(1);
+            animation: scaleAnimation 5s ease-in-out infinite;
+        }
+
+        @keyframes scaleAnimation {
+            0% {
+                clip-path: inset(0 100% 0 0);
+            }
+            10% {
+                clip-path: inset(0 0 0 0);
+            }
+            70% {
+                clip-path: inset(0 0 0 0);
+            }
+            80% {
+                clip-path: inset(0 100% 0 0);
+            }
+            100% {
+                clip-path: inset(0 100% 0 0);
+            }
         }
     }
 
-    span {
-        font-size: 20px;
-        font-weight: 500;
-        width: 560px;
+        span {
+            font-size: 20px;
+            font-weight: 500;
+            width: 560px;
 
-        .btn-container {
-            margin-top: 50px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
+            .btn-container {
+                margin-top: 50px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
         }
-    }
 }
