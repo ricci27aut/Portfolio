@@ -1,16 +1,22 @@
 <section class="colleagues">
     <article class="colleagues-header max-width">
         <div class="suptittle-container">
-            <img src="assets/icons/text-decoration/blue-curve-arrow.svg">
+            <img class="blue-arrow" src="assets/icons/text-decoration/blue-curve-arrow.svg">
             <p>IN THEIR WORDS:</p>
         </div>
         <h1>Colleagues' Thoughts</h1>
     </article>
 
     <article class="colleagues-notes max-width">
-        <div class="note-1 note-style">Karl really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.<div class="name-area"><span>Tobias Langer<p>Frontend Developer</p></span><h3><img src="assets/icons/in.svg">Profile</h3></div></div>
-        <div class="note-2 note-style">She consistently brings innovative ideas to the table and inspires the team with her creativity and dedication.<div class="name-area"><span>Tobias Langer<p>Frontend Developer</p></span><h3><img src="assets/icons/in.svg">Profile</h3></div></div>
-        <div class="note-3 note-style">His attention to detail and commitment to quality have significantly elevated our project's standards.<div class="name-area"><span>Tobias Langer<p>Frontend Developer</p></span><h3><img src="assets/icons/in.svg">Profile</h3></div></div>
+        <div class="note-1 note-style">Karl really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.
+            <div class="name-area">
+                <span>Tobias Langer
+                    <p>Frontend Developer</p>
+                </span>
+        <h3 class="linkin-profil" class="linkin-profil" (mouseenter)="isHovered = 1" (mouseleave)="isHovered = 0">
+            <img [src]="isHovered === 1 ? 'assets/icons/in-hover.svg' : 'assets/icons/in.svg'">Profile</h3></div></div>
+        <div class="note-2 note-style">She consistently brings innovative ideas to the table and inspires the team with her creativity and dedication.<div class="name-area"><span>Tobias Langer<p>Frontend Developer</p></span><h3 class="linkin-profil" (mouseenter)="isHovered = 2" (mouseleave)="isHovered = 0"><img [src]="isHovered === 2 ? 'assets/icons/in-hover.svg' : 'assets/icons/in.svg'">Profile</h3></div></div>
+        <div class="note-3 note-style">His attention to detail and commitment to quality have significantly elevated our project's standards.<div class="name-area"><span>Tobias Langer<p>Frontend Developer</p></span><h3 class="linkin-profil" (mouseenter)="isHovered = 3" (mouseleave)="isHovered = 0"><img [src]="isHovered === 3 ? 'assets/icons/in-hover.svg' : 'assets/icons/in.svg'">Profile</h3></div></div>
     </article>
 
 </section>

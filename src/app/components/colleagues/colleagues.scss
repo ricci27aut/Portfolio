@@ -8,6 +8,7 @@
     justify-content: start;
     flex-direction: column;
     padding-top: 50px;
+    cursor: default;
 }
 
 .colleagues-header {
@@ -37,10 +38,21 @@
         font-weight: 700;
     }
 
-    img {
+    .blue-arrow {
         width: 100px;
         height: 36px;
+
+        animation: appearFromLeft 5s infinite;
     }
+
+    @keyframes appearFromLeft {
+    0% {
+      clip-path: inset(0 0 0 100%);
+    }
+    10% {
+        clip-path: inset(0 0 0 0);
+    }
+}
 
 }
 
@@ -71,11 +83,34 @@
             h3{
                 display: flex;
                 align-items: center;
+
+                img{
+                    width: 24px;
+                    height: 24px;
+                }
+
+                &:hover{
+                    color: $color-white-primary;
+                }
+            }
+
+            .linkin-profil{
+                cursor: pointer;
             }
         }
+
+        &:hover {
+              background-image:
+                url('/assets/icons/text-decoration/note-hover.svg'),
+                url('/assets/images/red-note-1.png');
+            .name-area{
+                span{
+                    color: $color-white-primary;
+                }
+            }
+
+        }
     }
-
-
 
     .note-1 {
         position: absolute;

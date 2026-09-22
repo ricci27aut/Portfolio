@@ -3,10 +3,11 @@ import { AboutMe } from '../about-me/about-me';
 import { SectionTitle } from '../section-title/section-title';
 import { SkillSet } from '../skill-set/skill-set';
 import { Colleagues } from '../colleagues/colleagues';
+import { Form } from '../form/form';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [AboutMe, SectionTitle, SkillSet, Colleagues],
+  imports: [AboutMe, SectionTitle, SkillSet, Colleagues, Form],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.scss',
 })

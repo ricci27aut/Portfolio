@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './colleagues.html',
   styleUrl: './colleagues.scss',
 })
-export class Colleagues {}
+export class Colleagues {
+  isHovered: number = 0;
+}
