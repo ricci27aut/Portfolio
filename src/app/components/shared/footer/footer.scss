@@ -1,0 +1,116 @@
+@use '../../../../styles.scss' as *;
+
+* {
+    color: $color-white-primary;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-header {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 40px;
+    margin-bottom: 30px;
+
+    h1 {
+        width: fit-content;
+        color: $font-blue;
+        font-size: 50px;
+
+        &:hover {
+            color: $font-hover;
+        }
+    }
+}
+
+.footer-links {
+    font-size: 18px;
+    font-weight: 700;
+    font-style: Bold;
+
+    .footer-link {
+        position: relative;
+        cursor: pointer;
+
+        img {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .legal-notice {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        img {
+            display: none;
+            width: 90px;
+            height: 35px;
+        }
+
+        &:hover {
+            img {
+                display: block;
+
+                animation: fadeIn 0.3s ease-in-out;
+            }
+        }
+    }
+
+    .social-links {
+        position: relative;
+        height: 40px;
+        width: 84px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            position: relative;
+            z-index: 2;
+        }
+
+        img {
+            right: 40%;
+            top: -25px;
+            transform: rotate(-180deg);
+            clip-path: inset(0 100% 0 0);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 30px;
+
+            background-color: $font-blue;
+
+            transform: scaleX(0);
+            transform-origin: center;
+
+            transition: transform 0.5s ease-in-out;
+            z-index: 1;
+        }
+
+        &:hover {
+            &:before {
+                transform: scaleX(1);
+            }
+
+
+            img {
+                animation: rotateLeft 0.8s ease-in-out forwards;
+            }
+        }
+
+        &.was-hovered:not(:hover) {
+            img {
+                animation: rotateRight 0.8s ease-in-out forwards;
+            }
+        }
+    }
+}

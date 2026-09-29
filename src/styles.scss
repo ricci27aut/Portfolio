@@ -18,3 +18,59 @@ $btn-hover: #F87A55;
     max-width: 1440px;
     margin: 0 auto;
 }
+
+@keyframes fadeIn {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes rotateLeft {
+    0% {
+        right: 40%;
+        transform: rotate(-180deg);
+        clip-path: inset(0 100% 0 0);
+    }
+
+    75% {
+        right: -3%;
+        transform: rotate(15deg);
+        clip-path: inset(0 0 0 0);
+    }
+
+    87% {
+        right: 2%;
+        transform: rotate(-8deg);
+        clip-path: inset(0 0 0 0);
+    }
+
+    95% {
+        right: -0.5%;
+        transform: rotate(3deg);
+        clip-path: inset(0 0 0 0);
+    }
+
+    100% {
+        right: 0;
+        transform: rotate(0deg);
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes rotateRight {
+    0% {
+        right: 0;
+        transform: rotate(0deg);
+        clip-path: inset(0 0 0 0);
+    }
+
+    100% {
+        right: 40%;
+        transform: rotate(-180deg);
+        clip-path: inset(0 100% 0 0);
+    }
+}

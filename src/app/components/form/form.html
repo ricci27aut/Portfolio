@@ -1,5 +1,6 @@
 <section class="form-section">
     <article class="form-article max-width">
+        <div class="form-container">
         <div class="text-area">
             <h2>Contact Me</h2>
             <h1>Ready to work together?</h1>
@@ -12,11 +13,12 @@
                 Show interest in contributing to a new project, while
                 highlighting the value and skills you can bring to the table.
             </p>
-            <div class="image-container"><img src="assets/images/yellwo-arrow-wav.svg"></div>
+            <div class="image-container"><img src="assets/images/yellwo-arrow-wav.svg" alt="Yellow Arrow Wave"></div>
         </div>
         <form class="contact-form">
-            <img class="name-tag" src="assets/images/form-name-image.png">
-            <div [ngClass]="{'active-input': whichInput === 1, 'dnone': whichInput !== 1}" class="border margin-bottom-10px"></div>
+            <img class="name-tag" src="assets/images/form-name-image.png" alt="Form Name Image">
+            <div [ngClass]="{'active-input': whichInput === 1, 'dnone': whichInput !== 1}"
+                class="border margin-bottom-10px"></div>
             <div class="form-inputs">
                 <div class="form-input" (mouseenter)="whichInput = 1" (mouseleave)="whichInput = 0">
                     <label for="name">What's your name?</label>
@@ -46,5 +48,8 @@
             </div>
             <div class="btn-container"><app-to-form-btn btnName="Send"></app-to-form-btn></div>
         </form>
+        </div>
+        <app-footer></app-footer>
     </article>
+    
 </section>
