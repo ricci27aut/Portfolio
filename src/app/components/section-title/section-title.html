@@ -1,26 +1,12 @@
 <section>
-    <header>
-        <h2>RS</h2>
-        <div class="nav-links">
-            <a>About me</a>
-            <a>Skills</a>
-            <a>Projects</a>
-            <a>Contact</a>
-        </div>
-        <div class="language-switcher">
-            <p>EN</p><img src="assets/icons/slider/slider-on.png">
-            <p>DE</p>
-        </div>
-    </header>
-
-    <article>
-
+    <app-menu-header class="menu-header max-width"></app-menu-header>
+    <article class="max-width">
         <div class="landing-content-wrapper">
 
             <div class="landing-content">
-                <span class="hello-world" (mouseenter)="changeHW()"
-                    (mouseleave)="helloWorld='Hello World'">{{helloWorld}}<img
-                        [class.dnone]="helloWorld==='Hello World'" src="assets/icons/waving_hand.png"></span>
+                <div class="hello-world" [class.was-hovered]="wasHovered" (mouseenter)="changeHW()" (mouseleave)="resetHW()">
+                    <p>{{helloWorld()}}</p><img src="assets/icons/waving_hand.png">
+                </div>
                 <div class="poll-container">
                     <h1>Frontend</h1>
                     <div class="pol-img"></div>
@@ -32,7 +18,7 @@
                 <div class="get-in-touch-container"><app-to-form-btn></app-to-form-btn></div>
             </div>
 
-</div>
+        </div>
 
         <div class="social-icons">
             <p><img src="assets/icons/git-icon.png"></p>

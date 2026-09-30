@@ -1,0 +1,14 @@
+ <header>
+        <h2>RS</h2>
+        <div class="nav-links">
+            <a class="menu-item about-me">About me<img src="assets/icons/text-decoration/decoration-circle.png"></a>
+            <a class="menu-item skills">Skills<img src="assets/icons/text-decoration/decoration-line.png"></a>
+            <a class="menu-item projects">Projects<img src="assets/icons/text-decoration/decoration-wave.png"></a>
+            <a class="menu-item contact">Contact<img src="assets/icons/text-decoration/decoration-dopple-line.png"></a>
+        </div>
+        <div class="language-switcher">
+            <p (click)="language.set('en')" [class.language-active]="language() === 'en'">EN</p>
+            <img [src]="language() === 'en' ? 'assets/icons/slider/slider-on.png' : 'assets/icons/slider/slider-off.png'">
+            <p (click)="language.set('de')" [class.language-active]="language() === 'de'">DE</p>
+        </div>
+    </header>

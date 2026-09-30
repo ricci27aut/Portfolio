@@ -1,4 +1,4 @@
-@use '../../../styles.scss' as colors;
+@use '../../../styles.scss' as *;
 
 section {
     background-image: url('/assets/backgrounds/background-landing.png');
@@ -6,47 +6,27 @@ section {
     background-position: top;
     background-repeat: no-repeat;
     height: 100vh;
+    max-height: 1000px;
     width: 100%;
-    background-color: colors.$color-white-primary;
-    color: colors.$color-white-primary;
+    background-color: $color-white-primary;
+    color: $color-white-primary;
     display: flex;
     align-items: center;
     flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
 
-    header {
-        max-width: 1440px;
+    .menu-header {
         width: 100%;
-        padding: 0 20px;
-        display: flex;
-        align-items: center;
-        gap: 120px;
-
-        h2 {
-            color: colors.$font-blue;
-            font-size: 50px;
-
-            &:hover {
-                color: colors.$font-hover;
-            }
-        }
-
-        .nav-links {
-            box-sizing: border-box;
-            width: 100%;
-            font-size: 18px;
-            font-weight: 700;
-            font-style: bold;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
     }
 }
 
 article {
+    box-sizing: border-box;
     position: relative;
-    max-width: 1440px;
-    height: 90vh;
+    flex: 1;
+    height: auto;
+    max-height: none;
     width: 100%;
     display: flex;
     align-items: center;
@@ -58,7 +38,7 @@ article {
         display: flex;
         flex-direction: column;
         gap: 8px;
-        top: 630px;
+        top: 600px;
         left: 20px;
 
         p {
@@ -70,10 +50,10 @@ article {
             height: 40px;
 
             border-radius: 50%;
-            border: 1px solid colors.$color-white-primary;
+            border: 1px solid $color-white-primary;
 
-            background-image: linear-gradient(colors.$font-blue,
-                    colors.$font-blue );
+            background-image: linear-gradient($font-blue,
+                    $font-blue );
 
             background-repeat: no-repeat;
             background-position: bottom;
@@ -96,50 +76,64 @@ article {
     }
 }
 
-.language-switcher {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 18px;
-    font-weight: 700;
-    font-style: bold;
-}
-
 .landing-content {
     h1 {
         font-size: 120px;
     }
 
-.hello-world {
-    position: relative;
-    bottom: 30px;
-    cursor: pointer;
-    border: 1px solid colors.$color-white-primary;
-    border-radius: 30px;
-    padding: 10px 20px;
-    overflow: hidden;
+    .hello-world {
+        width: fit-content;
+        position: relative;
+        bottom: 30px;
+        cursor: pointer;
+        border: 1px solid $color-white-primary;
+        border-radius: 30px;
+        padding: 10px 20px;
 
-    transition: padding 0.3s ease;
+        transition: padding 0.3s ease;
 
-    img {
-        position: absolute;
-        top: -35px;
-          transform: translateY(-180deg);
-        animation: hello-world-move 1s ease forwards;
-    }
-
-    &:hover {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-}
-
-    @keyframes hello-world-move {
-        from {
-            transform: translateY(-180deg);
+        img {
+            position: absolute;
+            z-index: -1;
+            top: -37px; 
         }
-        to {
-            transform: translateY(0px);
+
+    p {
+        position: relative;
+        z-index: 2;
+    }
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+
+            background-color: $font-blue;
+            border-radius: 30px;
+            transform: scaleX(0);
+            transform-origin: center;
+
+            transition: transform 0.5s ease-in-out;
+            z-index: 1;
+        }
+
+        &:hover {
+            &:before {
+                transform: scaleX(1);
+            }
+
+
+            img {
+                z-index: 1;
+                animation: rotateLeft 0.8s ease-in-out forwards;
+            }
+        }
+
+        &.was-hovered:not(:hover) {
+            img {
+                z-index: 1;
+                animation: rotateRight 0.8s ease-in-out forwards;
+            }
         }
     }
 
@@ -155,7 +149,7 @@ article {
             bottom: 0;
             width: 200px;
             height: 250px;
-            background-color: colors.$color-white-primary;
+            background-color: $color-white-primary;
             transform: rotate(10deg);
         }
 

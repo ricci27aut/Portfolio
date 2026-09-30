@@ -1,0 +1,94 @@
+@use '../../../../styles.scss' as *;
+
+header {
+    max-width: 1440px;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 120px;
+
+    h2 {
+        color: $font-blue;
+        font-size: 50px;
+
+        &:hover {
+            color: $font-hover;
+        }
+    }
+
+    .nav-links {
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 18px;
+        font-weight: 700;
+        font-style: bold;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+    }
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: bold;
+
+    p{
+        cursor: pointer;
+    }
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    img {
+        position: absolute;
+    }
+}
+
+.menu-item {
+    cursor: pointer;
+
+    img {
+        height: 42px;
+        clip-path: inset(0 100% 0 0);
+        transition: clip-path 0.3s ease-in-out;
+    }
+
+    &.skills img {
+        width: 68px;
+    }
+
+    &.projects img {
+        width: 105px;
+    }
+
+    &.contact img {
+        width: 95px;
+    }
+
+    &.about-me img {
+        width: 95px;
+        clip-path: inset(0 0 100% 0);
+    }
+
+    &:hover {
+        img {
+            transition: clip-path 0.3s ease-in-out;
+            clip-path: inset(0 0 0 0);
+        }
+    }
+}
+
+.language-active{
+    color: $font-hover;
+}
