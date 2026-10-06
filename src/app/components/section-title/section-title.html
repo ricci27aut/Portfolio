@@ -4,17 +4,36 @@
         <div class="landing-content-wrapper">
 
             <div class="landing-content">
-                <div class="hello-world" [class.was-hovered]="wasHovered" (mouseenter)="changeHW()" (mouseleave)="resetHW()">
+                <div class="hello-world" [class.was-hovered]="wasHovered" (mouseenter)="changeHW()"
+                    (mouseleave)="resetHW()">
                     <p>{{helloWorld()}}</p><img src="assets/icons/waving_hand.png">
                 </div>
                 <div class="poll-container">
-                    <h1>Frontend</h1>
+                    <h1 class="hover-title">
+                        <span class="fisrtletter">F</span>
+                        <span>r</span>
+                        <span>o</span>
+                        <span>n</span>
+                        <span>t</span>
+                        <span>e</span>
+                        <span>n</span>
+                        <span>d</span>
+                    </h1>
                     <div class="pol-img"></div>
                 </div>
             </div>
 
             <div class="landing-content secent-title-section">
-                <h1>Developer</h1>
+                <h1 class="hover-title-bottom">
+                    <span>D</span>
+                    <span>E</span>
+                    <span>V</span>
+                    <span>L</span>
+                    <span>O</span>
+                    <span>P</span>
+                    <span>E</span>
+                    <span>R</span>
+                </h1>
                 <div class="get-in-touch-container"><app-to-form-btn></app-to-form-btn></div>
             </div>
 

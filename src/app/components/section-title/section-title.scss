@@ -95,13 +95,13 @@ article {
         img {
             position: absolute;
             z-index: -1;
-            top: -37px; 
+            top: -37px;
         }
 
-    p {
-        position: relative;
-        z-index: 2;
-    }
+        p {
+            position: relative;
+            z-index: 2;
+        }
 
         &::before {
             content: '';
@@ -177,4 +177,40 @@ article {
 
 .dnone {
     display: none;
+}
+
+.hover-title {
+    cursor: pointer;
+
+    span {
+        transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+        &:hover {
+            color: $font-hover;
+            text-transform: uppercase;
+            transform: scale(1.1);
+        }
+    }
+
+    .fisrtletter {
+        &:hover {
+            color: $font-hover;
+            text-transform: lowercase;
+            transform: scale(0.9);
+        }
+    }
+}
+
+.hover-title-bottom {
+    cursor: pointer;
+
+    span {
+        transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+        &:hover {
+            color: $font-hover;
+            text-transform: lowercase;
+            transform: scale(0.9);
+        }
+    }
 }
