@@ -56,6 +56,21 @@ article {
                 position: absolute;
                 left: -40px;
                 bottom: -70px;
+                animation: disepier-left 5s infinite;
+            }
+        }
+
+        @keyframes disepier-left {
+            0% {
+                clip-path: inset(0 100% 0 0);
+            }
+
+            50% {
+                clip-path: inset(0 0 0 0);
+            }
+
+            100% {
+                clip-path: inset(0 0 0 0);
             }
         }
 
@@ -77,6 +92,7 @@ article {
         position: relative;
         width: 560px;
         height: 337px;
+        border-radius: 30px;
 
         .details-icon {
             width: 168px;
@@ -86,13 +102,48 @@ article {
             bottom: 50px;
         }
 
-        .pc-image {
-            width: 560px;
+        .pc-image-warp {
+            animation: up-down 5s infinite;
 
+            .pc-image {
+                width: 560px;
+                transition: transform 0.3s ease;
+            }
+        }
+
+        &:hover {
+            box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.25);
+
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, 0.673) 0%,
+                    rgba(0, 0, 0, 0.1) 25%,
+                    transparent 50%);
+
+            .pc-image-warp {
+                animation-play-state: paused;
+            }
+
+            .pc-image {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes up-down {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
         }
     }
 
-       h2 {
+    h2 {
         font-size: 24px;
         font-weight: 700;
         font-style: Medium;
