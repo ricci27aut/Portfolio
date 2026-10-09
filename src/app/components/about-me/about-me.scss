@@ -1,7 +1,7 @@
-@use '../../../styles.scss' as colors;
+@use '../../../styles.scss' as *;
 
 section {
-    background-color: colors.$color-white-primary;
+    background-color: $color-white-primary;
     width: 100%;
     min-height: fit-content;
     display: flex;
@@ -42,7 +42,7 @@ article {
             align-items: center;
             justify-content: center;
             gap: 10px;
-            color: colors.$color-white-primary;
+            color: $color-white-primary;
             position: absolute;
         }
     }
@@ -96,37 +96,19 @@ article {
             transform: scale(1);
             animation: scaleAnimation 5s ease-in-out infinite;
         }
-
-        @keyframes scaleAnimation {
-            0% {
-                clip-path: inset(0 100% 0 0);
-            }
-            10% {
-                clip-path: inset(0 0 0 0);
-            }
-            70% {
-                clip-path: inset(0 0 0 0);
-            }
-            80% {
-                clip-path: inset(0 100% 0 0);
-            }
-            100% {
-                clip-path: inset(0 100% 0 0);
-            }
-        }
     }
 
-        span {
-            font-size: 20px;
-            font-weight: 500;
-            width: 560px;
+    span {
+        font-size: 20px;
+        font-weight: 500;
+        width: 560px;
 
-            .btn-container {
-                margin-top: 50px;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-            }
+        .btn-container {
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
         }
+    }
 }

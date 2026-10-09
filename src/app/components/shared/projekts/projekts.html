@@ -1,5 +1,5 @@
 <section>
-    <article *ngFor="let project of projekts"[routerLink]="['/projekts', project.id]">
+    <article *ngFor="let project of projekts.slice(1)" [routerLink]="['/projekts', project.id]">
         <div class="image-container">
             <img [src]="project.image">
             <app-to-form-btn btnName="Project details" class="btn"></app-to-form-btn>

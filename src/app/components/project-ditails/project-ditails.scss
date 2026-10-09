@@ -17,7 +17,167 @@ main {
 
 section {
     width: 100%;
+    font-size: 18px;
 
+    article {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .back-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 60px 0 60px 0;
+
+        h2 {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            gap: 10px;
+
+            font-weight: 700;
+            font-style: bold;
+
+            &:hover {
+                color: $btn-hover;
+            }
+        }
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: 700;
+        font-style: bold;
+    }
+}
+
+.project-text-container {
+    width: 100%;
+    max-width: 490px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 40px;
+
+    h1 {
+        font-size: 64px;
+        font-weight: 700;
+        font-style: bold;
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 100%;
+            height: 100%;
+            max-width: 340px;
+            max-height: 20px;
+
+            animation: scaleAnimation 7s infinite;
+        }
+    }
+
+    .description {
+        margin: 10px 0;
+    }
+
+    .Duration {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        p {
+            font-size: 18px;
+            font-weight: 400;
+            font-style: Regular;
+        }
+    }
+
+    .tech {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        h3 {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            font-size: 16px;
+            font-weight: 400;
+            font-style: Regular;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}
+
+.project-image-container {
+    width: 100%;
+    max-width: 560px;
+
+    .project-images {
+        position: relative;
+
+        .project-image {
+            border-radius: 30px;
+        }
+
+        .check-ditails {
+            width: 120px;
+            height: 120px;
+
+            position: absolute;
+            top: 40%;
+            right: -60px;
+        }
+    }
+
+    .project-buttons {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+
+        margin: 40px 0 40px 0;
+    }
+
+    .next-project {
+        color: $color-white-primary;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            cursor: pointer;
+
+            font-size: 18px;
+            font-weight: 700;
+            font-style: bold;
+
+            &:hover {
+                color: $font-hover;
+            }
+        }
+
+        .yellow-arrow {
+            width: 24px;
+            height: 24px;
+
+            transform: rotate(180deg);
+        }
+    }
 }
 
 :host ::ng-deep app-menu-header {
@@ -27,4 +187,8 @@ section {
     .language-switcher {
         color: $color-white-primary;
     }
+}
+
+.margin-bottom-15px {
+    margin-bottom: 15px;
 }

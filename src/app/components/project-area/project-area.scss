@@ -6,7 +6,7 @@ section {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-  
+
     height: auto;
     box-sizing: border-box;
     padding: 20px;
@@ -16,13 +16,13 @@ section {
 article {
     display: flex;
     align-items: start;
-    justify-content: center;
+    justify-content: space-between;
     height: 530px;
     width: 100%;
 
 
     p {
-        width: 70%;
+        width: 100%;
         font-size: 18px;
         font-weight: 400;
         font-style: Regular;
@@ -30,6 +30,8 @@ article {
 }
 
 .title-container {
+    max-width: 550px;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -83,74 +85,95 @@ article {
     }
 }
 
-.first-project-conatiner {
+
+.first-project-area {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     height: 100%;
 
-    .image-container {
-        position: relative;
-        width: 560px;
-        height: 337px;
-        border-radius: 30px;
-        cursor: pointer;
-        
+    .first-project-container {
+        max-width: 550px;
+        width: 100%;
 
-        .details-icon {
-            width: 168px;
-            height: 168px;
-            position: absolute;
-            left: 20px;
-            bottom: 50px;
-        }
+        .image-container {
+            position: relative;
+            width: 560px;
+            height: 337px;
+            border-radius: 30px;
+            cursor: pointer;
 
-        .pc-image-warp {
-            animation: up-down 5s infinite;
 
-            .pc-image {
-                width: 560px;
-                transition: transform 0.3s ease;
+            .details-icon {
+                width: 168px;
+                height: 168px;
+                position: absolute;
+                left: 20px;
+                bottom: 50px;
             }
-        }
-
-        &:hover {
-            box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.25);
-
-            background: linear-gradient(to top,
-                    rgba(0, 0, 0, 0.673) 0%,
-                    rgba(0, 0, 0, 0.1) 25%,
-                    transparent 50%);
 
             .pc-image-warp {
-                animation-play-state: paused;
+                animation: up-down 5s infinite;
+                position: relative;
+
+                .pc-image {
+                    width: 560px;
+                    transition: transform 0.3s ease;
+                }
+
+                app-to-form-btn {
+                    position: absolute;
+                    bottom: -55px;
+                    right: 4ch;
+
+                    display: none;
+                }
             }
 
-            .pc-image {
-                transform: scale(1.1);
+            &:hover {
+                box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.25);
+
+                background: linear-gradient(to top,
+                        rgba(0, 0, 0, 0.845) 0%,
+                        rgba(0, 0, 0, 0.1) 25%,
+                        transparent 50%);
+
+                .pc-image-warp {
+                    animation-play-state: paused;
+
+                    app-to-form-btn {
+                        display: inline-block;
+                    }
+                }
+
+                .pc-image {
+                    transform: scale(1.1);
+                }
+
+
+            }
+
+            @keyframes up-down {
+                0% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(-20px);
+                }
+
+                100% {
+                    transform: translateY(0);
+                }
             }
         }
 
-        @keyframes up-down {
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            font-style: Medium;
+            margin-bottom: 20px;
         }
-    }
-
-    h2 {
-        font-size: 24px;
-        font-weight: 700;
-        font-style: Medium;
-        margin-bottom: 20px;
     }
 }

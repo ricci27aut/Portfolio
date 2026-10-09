@@ -1,38 +1,42 @@
 <main>
-    <section>
+    <section class="max-width">
         <app-menu-header></app-menu-header>
-        <div>
-            <h2><img src="assets/icons/back-orange.png">Go Back</h2>
+        <div class="back-btn">
+            <h2 routerLink="/"><img src="assets/icons/back-orange.png">Go Back</h2>
         </div>
         <article>
-            <h1>Project Title<img src="assets/icons/text-decoration/short-blueLine.png" alt="Underline Title"></h1>
+            <div class="project-text-container">
+                <h1>{{projekts[projectIndex].title}}<img src="assets/icons/text-decoration/short-blueLine.png" alt="Underline Title"></h1>
 
-            <div>
-                <h2>Description</h2>
-                <p>Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions,
-                    assign users and categories. </p>
-            </div>
-            <div>
-                <h2>Implementation Details</h2>
-                <p>Short text that describes your role or the workflow for this specific project. Let a recruiter know
-                    more
-                    about your knowledge and ability to work independently or collaboratively in a structured way.</p>
-            </div>
+                <div class="description">
+                    <h2 class="margin-bottom-15px">Description</h2>
+                    <p>{{projekts[projectIndex].description}}</p>
+                </div>
+                <div>
+                    <h2 class="margin-bottom-15px">Implementation Details</h2>
+                    <p>{{projekts[projectIndex].myWork || 'No implementation details available.'}}</p>
+                </div>
 
-            <div>
-                <h2>Duration:<p>5 weeks</p></h2>
-                <div></div>
+                <div>
+                    <h2 class="Duration">Duration:<p>{{projekts[projectIndex].duration}}</p>
+                    </h2>
+                    <div class="tech">
+                        <h3 *ngFor="let tech of projekts[projectIndex].technologies"><img src="assets/icons/skills/{{tech}}.svg">{{tech}}</h3>
+                    </div>
+                </div>
             </div>
-        </article>
-        <article>
-            <div>
-                <img src="assets/images/DABubble.svg" alt="Project Image">
+            <div class="project-image-container">
+                <div class="project-images">
+                    <img class="project-image" src="{{projekts[projectIndex].image}}" alt="Project Image">
+                    <img class="check-ditails" src="assets/images/check-ditails.png">
+                    
+                </div>
+                <div class="project-buttons">
+                    <app-to-form-btn btnName="GitHub"></app-to-form-btn>
+                    <app-to-form-btn btnName="Live Test"></app-to-form-btn>
+                </div>
+                <div class="next-project"><h2 (click)="nextProject()">Next Project<img class="yellow-arrow" src="assets/icons/yellow-arrow.png" alt="Next Project Arrow"></h2></div>
             </div>
-            <div>
-                <app-to-form-btn btnName="GitHub"></app-to-form-btn>
-                <app-to-form-btn btnName="Live Test"></app-to-form-btn>
-            </div>
-            <div><span>Next Project<img></span></div>
         </article>
     </section>
 </main>
