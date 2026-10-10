@@ -1,14 +1,24 @@
- <header>
-        <h2>RS</h2>
-        <div class="nav-links">
-            <a class="menu-item about-me">About me<img src="assets/icons/text-decoration/decoration-circle.png"></a>
-            <a class="menu-item skills">Skills<img src="assets/icons/text-decoration/decoration-line.png"></a>
-            <a class="menu-item projects">Projects<img src="assets/icons/text-decoration/decoration-wave.png"></a>
-            <a class="menu-item contact">Contact<img src="assets/icons/text-decoration/decoration-dopple-line.png"></a>
+<header>
+    <h2>RS</h2>
+    <div class="nav-links">
+        <a class="menu-item about-me" routerLink="/" fragment="about-me">About me<img
+                src="assets/icons/text-decoration/decoration-circle.png"></a>
+        <a class="menu-item skills" routerLink="/" fragment="skills">Skills<img
+                src="assets/icons/text-decoration/decoration-line.png"></a>
+        <a class="menu-item projects" routerLink="/" fragment="projects">Projects<img
+                src="assets/icons/text-decoration/decoration-wave.png"></a>
+        <a class="menu-item contact" routerLink="/" fragment="contact">Contact<img
+                src="assets/icons/text-decoration/decoration-dopple-line.png"></a>
+    </div>
+    <div class="language-switcher">
+        <div (click)="language.set('en')" class="language-option">
+            <img src="assets/icons/slider/slider-text-decoration.png">
+            <p [class.language-active]="language() === 'en'">EN</p>
         </div>
-        <div class="language-switcher">
-            <p (click)="language.set('en')" [class.language-active]="language() === 'en'">EN</p>
-            <img [src]="language() === 'en' ? 'assets/icons/slider/slider-on.png' : 'assets/icons/slider/slider-off.png'">
-            <p (click)="language.set('de')" [class.language-active]="language() === 'de'">DE</p>
+        <img [src]="language() === 'en' ? 'assets/icons/slider/slider-on.png' : 'assets/icons/slider/slider-off.png'">
+        <div (click)="language.set('de')" class="language-option">
+            <img src="assets/icons/slider/slider-text-decoration.png">
+            <p [class.language-active]="language() === 'de'">DE</p>
         </div>
-    </header>
+    </div>
+</header>

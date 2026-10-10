@@ -114,3 +114,20 @@
         }
     }
 }
+
+:host ::ng-deep app-menu-header {
+    .language-switcher {
+        color: $color-white-primary;
+    }
+}
+
+:host ::ng-deep app-footer {
+    .footer-header {
+        color: black;
+    }
+
+    .footer-links {
+        color: black;
+    }
+
+}

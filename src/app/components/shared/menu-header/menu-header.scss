@@ -34,13 +34,32 @@ header {
 .language-switcher {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     font-size: 18px;
     font-weight: 700;
     font-style: bold;
 
-    p{
-        cursor: pointer;
+    .language-option {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            cursor: pointer;
+        }
+
+        img {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            clip-path: inset(0 100% 0 0);
+        }
+
+        &:hover img {
+            clip-path: inset(0 0 0 0);
+            transition: clip-path 0.3s ease-in-out;
+        }
     }
 }
 
@@ -89,6 +108,7 @@ header {
     }
 }
 
-.language-active{
+.language-active {
     color: $font-hover;
 }
+

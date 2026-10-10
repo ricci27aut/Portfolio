@@ -1,0 +1,73 @@
+@use '../../../../styles.scss' as *;
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: $color-white-primary;
+    height: 100%;
+    width: 100%;
+    background-image: url('/assets/backgrounds/legal-background.png');
+    background-size: 100% 439px;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+app-menu-header {
+    width: 100%;
+
+    .nav-links a,
+.language-option p:not(.language-active) {
+    color: var(--text-color, #F8F9FA);
+}
+}
+
+app-footer {
+      width: 100%;
+    --text-color: #0E1013;
+}
+
+.legal-notice {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 350px;
+        font-size: 64px;
+        color: $color-white-primary;
+    }
+}
+
+.legal-notice-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 20px;
+
+    h2 {
+        color: #3355FF;
+        font-weight: 700;
+        font-size: 24px;
+        font-style: Bold;
+        margin-bottom: 10px;
+    }
+
+    span{
+          font-weight: 400;
+        font-size: 16px;
+        font-style: Regular;
+    }
+
+    ul{
+        margin-left: 15px;
+    }
+}

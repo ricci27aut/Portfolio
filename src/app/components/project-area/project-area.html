@@ -10,10 +10,11 @@
         </div>
         <div class="first-project-area">
             <div class="first-project-container">
-                <div class="image-container">
+                <div class="image-container" [routerLink]="['/projekts', projekts[0].id || 'Join']">
                     <div class="pc-image-warp">
                         <img class="pc-image" src="assets/images/laptop.png">
-                        <app-to-form-btn btnName="Project details"></app-to-form-btn>
+                        <app-to-form-btn btnName="Project details" href="/projects"
+                            toComponent="project-details"></app-to-form-btn>
                     </div>
                     <img class="details-icon" src="assets/images/check-ditails.png">
                 </div>

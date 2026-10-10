@@ -1,55 +1,63 @@
 <section class="form-section">
     <article class="form-article max-width">
         <div class="form-container">
-        <div class="text-area">
-            <h2>Contact Me</h2>
-            <h1>Ready to work together?</h1>
+            <div class="text-area">
+                <h2>Contact Me</h2>
+                <h1>Ready to work together?</h1>
 
-            <p>Encourage people to contact you and describe what role you are interested in. Express confidence in your
-                ability to make a meaningful contribution to a team through your expertise and enthusiasm for improving
-                your
-                skills.
-                <br><br>
-                Show interest in contributing to a new project, while
-                highlighting the value and skills you can bring to the table.
-            </p>
-            <div class="image-container"><img src="assets/images/yellwo-arrow-wav.svg" alt="Yellow Arrow Wave"></div>
-        </div>
-        <form class="contact-form">
-            <img class="name-tag" src="assets/images/form-name-image.png" alt="Form Name Image">
-            <div [ngClass]="{'active-input': whichInput === 1, 'dnone': whichInput !== 1}"
-                class="border margin-bottom-10px"></div>
-            <div class="form-inputs">
-                <div class="form-input" (mouseenter)="whichInput = 1" (mouseleave)="whichInput = 0">
-                    <label for="name">What's your name?</label>
-                    <input type="text" id="name" name="name" placeholder="{{placeholderNameInput}}">
+                <p>Encourage people to contact you and describe what role you are interested in. Express confidence in
+                    your
+                    ability to make a meaningful contribution to a team through your expertise and enthusiasm for
+                    improving
+                    your
+                    skills.
+                    <br><br>
+                    Show interest in contributing to a new project, while
+                    highlighting the value and skills you can bring to the table.
+                </p>
+                <div class="image-container"><img src="assets/images/yellwo-arrow-wav.svg" alt="Yellow Arrow Wave">
                 </div>
-
-                <div [ngClass]="{'active-input': whichInput === 1 || whichInput === 2}" class="border"></div>
-
-                <div class="form-input" (mouseenter)="whichInput = 2" (mouseleave)="whichInput = 0">
-                    <label for="email">What's your email?</label>
-                    <input type="email" id="email" name="email" placeholder="{{placeholderEmailInput}}">
-                </div>
-
-                <div [ngClass]="{'active-input': whichInput === 2 || whichInput === 3}" class="border"></div>
-
-                <div class="form-input" (mouseenter)="whichInput = 3" (mouseleave)="whichInput = 0">
-                    <label for="message">How can I help you?</label>
-                    <input type="text" id="message" name="message" placeholder="{{placeholderMessageInput}}">
-                </div>
-
-                <div [ngClass]="{'active-input': whichInput === 3}" class="border"></div>
-
-                <span class="privacy-policy">
-                    <div class="check-boxs"></div>I've read the <a href="#">privacy policy</a> and agree to the
-                    processing of my data as outlined.
-                </span>
             </div>
-            <div class="btn-container"><app-to-form-btn btnName="Send"></app-to-form-btn></div>
-        </form>
+            <form class="contact-form">
+                <img class="name-tag" src="assets/images/form-name-image.png" alt="Form Name Image">
+                <div [ngClass]="{'active-input': whichInput === 1, 'dnone': whichInput !== 1}"
+                    class="border margin-bottom-10px"></div>
+                <div class="form-inputs">
+                    <div class="form-input" (mouseenter)="whichInput = 1" (mouseleave)="whichInput = 0">
+                        <label for="name">What's your name?</label>
+                        <input type="text" [(ngModel)]="name" name="name" placeholder="{{placeholderNameInput}}">
+                    </div>
+
+                    <div [ngClass]="{'active-input': whichInput === 1 || whichInput === 2}" class="border"></div>
+
+                    <div class="form-input" (mouseenter)="whichInput = 2" (mouseleave)="whichInput = 0">
+                        <label for="email">What's your email?</label>
+                        <input type="email" [(ngModel)]="email" id="email" name="email" placeholder="{{placeholderEmailInput}}">
+                    </div>
+
+                    <div [ngClass]="{'active-input': whichInput === 2 || whichInput === 3}" class="border"></div>
+
+                    <div class="form-input" (mouseenter)="whichInput = 3" (mouseleave)="whichInput = 0">
+                        <label for="message">How can I help you?</label>
+                        <input type="text" [(ngModel)]="message" id="message" name="message" placeholder="{{placeholderMessageInput}}">
+                    </div>
+
+                    <div [ngClass]="{'active-input': whichInput === 3}" class="border"></div>
+
+                    <span class="privacy-policy">
+                        <div class="check-boxs" (click)="privecy = !privecy; privacyAlertShown = false"><img
+                                [ngClass]="privecy === true ? '' : 'dnone'" src="assets/icons/Check.png"
+                                alt="Check Box"></div>I've read the <a routerLink="/privacy-policy">privacy policy</a>
+                        and agree to the
+                        processing of my data as outlined.
+                    </span>
+                    <p class="alert" [ngStyle]="{'color': privacyAlertShown ? '#F87A55' : 'transparent'}">Please accept the privacy policy.</p>
+                </div>
+                <div class="btn-container"><app-to-form-btn btnName="Send" href="#"
+                        (click)="checkInput()"></app-to-form-btn></div>
+            </form>
         </div>
         <app-footer></app-footer>
     </article>
-    
+
 </section>
