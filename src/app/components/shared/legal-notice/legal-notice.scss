@@ -19,13 +19,13 @@ app-menu-header {
     width: 100%;
 
     .nav-links a,
-.language-option p:not(.language-active) {
-    color: var(--text-color, #F8F9FA);
-}
+    .language-option p:not(.language-active) {
+        color: var(--text-color, #F8F9FA);
+    }
 }
 
 app-footer {
-      width: 100%;
+    width: 100%;
     --text-color: #0E1013;
 }
 
@@ -61,13 +61,32 @@ app-footer {
         margin-bottom: 10px;
     }
 
-    span{
-          font-weight: 400;
+    span {
+        font-weight: 400;
         font-size: 16px;
         font-style: Regular;
     }
 
-    ul{
+    ul {
         margin-left: 15px;
+    }
+}
+
+:host ::ng-deep app-menu-header {
+    .language-switcher {
+        color: $color-white-primary;
+    }
+}
+
+:host ::ng-deep app-footer {
+
+    .footer-header h2,
+    .footer-links a {
+        color: black;
+    }
+
+    .git-icon,
+    .mail-icon {
+        filter: brightness(0);
     }
 }

@@ -3,22 +3,24 @@
 section {
     background-color: $color-white-primary;
     width: 100%;
+
     min-height: fit-content;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     padding-top: 100px;
     padding-bottom: 100px;
+    box-sizing: border-box;
 }
 
 .about-me-container {
     display: flex;
-    max-width: 1440px;
     width: 100%;
     position: relative;
 }
 
 article {
+    height: 100px;
     width: 50%;
     position: relative;
     display: flex;
@@ -33,8 +35,8 @@ article {
         justify-content: center;
 
         .paper-img {
-            height: 152px;
-            width: 560px;
+            height: clamp(140px, 10vw, 152px);
+            width: clamp(320px, 38vw, 560px);
         }
 
         h2 {
@@ -44,6 +46,7 @@ article {
             gap: 10px;
             color: $color-white-primary;
             position: absolute;
+            font-size: clamp(24px, 5vw, 32px);
         }
     }
 }
@@ -83,7 +86,7 @@ article {
     width: 50%;
 
     h1 {
-        font-size: 64px;
+        font-size: clamp(48px, 15vw, 64px);
         font-weight: 700;
         font-style: Bold;
         display: flex;
@@ -99,9 +102,10 @@ article {
     }
 
     span {
-        font-size: 20px;
+        font-size: clamp(18px, 5.6vw, 20px);
         font-weight: 500;
-        width: 560px;
+        width: 100%;
+        max-width: 560px;
 
         .btn-container {
             margin-top: 50px;
@@ -110,5 +114,43 @@ article {
             align-items: center;
             justify-content: flex-end;
         }
+    }
+}
+
+@media(max-width: 1040px) {
+
+    section {
+        height: 970px;
+    }
+
+    article {
+        width: 100%;
+        align-items: center;
+    }
+
+    .about-me-container {
+        flex-direction: column-reverse;
+        align-items: center;
+       
+        box-sizing: border-box;
+    }
+
+    .about-me-text-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+
+        h1{
+            width: 100%;
+        max-width: 560px;
+        text-align: start;
+        }
+    }
+
+    app-to-form-btn{
+        margin-bottom: 50px;
     }
 }

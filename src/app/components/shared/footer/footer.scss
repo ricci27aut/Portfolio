@@ -1,12 +1,12 @@
 @use '../../../../styles.scss' as *;
 
 * {
-    color: $color-white-primary;
     display: flex;
     justify-content: space-between;
 }
 
 .footer-header {
+     color: $color-white-primary;
     display: flex;
     flex-direction: column;
 
@@ -113,21 +113,4 @@
             }
         }
     }
-}
-
-:host ::ng-deep app-menu-header {
-    .language-switcher {
-        color: $color-white-primary;
-    }
-}
-
-:host ::ng-deep app-footer {
-    .footer-header {
-        color: black;
-    }
-
-    .footer-links {
-        color: black;
-    }
-
 }

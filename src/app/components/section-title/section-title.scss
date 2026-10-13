@@ -38,10 +38,10 @@ article {
         display: flex;
         flex-direction: column;
         gap: 8px;
-        top: 600px;
+        top: 70%;
         left: 20px;
 
-         a {
+        a {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -78,7 +78,7 @@ article {
 
 .landing-content {
     h1 {
-        font-size: 120px;
+        font-size: clamp(50px, 8.33vw, 120px);
     }
 
     .hello-world {
@@ -141,11 +141,12 @@ article {
         position: relative;
         display: flex;
         align-items: center;
+        width: 100%;
         gap: 20px;
 
         .pol-img {
             position: absolute;
-            right: 0px;
+            right: -50px;
             bottom: 0;
             width: 200px;
             height: 250px;
@@ -169,10 +170,12 @@ article {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-left: clamp(0px, 4vw, 70px);
 }
 
 .landing-content-wrapper {
-    width: 50%;
+    width: fit-content;
+    max-width: 100%;
 }
 
 .dnone {
@@ -212,5 +215,31 @@ article {
             text-transform: lowercase;
             transform: scale(0.9);
         }
+    }
+}
+
+@media (max-width: 1040px) {
+    .menu-header {
+        display: none;
+    }
+
+    section {
+        height: 812px;
+    }
+
+    article {
+        margin-top: 100px !important;
+        justify-content: flex-start;
+        flex: none;
+    }
+
+    .pol-img {
+        position: absolute !important;
+        right: 15% !important;
+        bottom: -450px !important;
+    }
+
+    .social-icons {
+        display: none !important;
     }
 }
