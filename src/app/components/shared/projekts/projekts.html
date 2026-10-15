@@ -1,5 +1,5 @@
 <section>
-    <article *ngFor="let project of projekts.slice(1)" [routerLink]="['/projekts', project.id]">
+    <article *ngFor="let project of projekts.slice(1); let i = index" [routerLink]="['/projekts', project.id]">
         <div class="image-container">
             <img [src]="project.image">
             <app-to-form-btn btnName="Project details" class="btn"></app-to-form-btn>
@@ -7,5 +7,7 @@
         </div>
         <h1>{{ project.title }}</h1>
         <p>{{ project.description }}</p>
+        <div class="mobile-btn" [ngClass]="i === 0 ? 'mobile-projects' : ''"><app-to-form-btn btnName="Project details"
+                color="black" class="btn"></app-to-form-btn></div>
     </article>
 </section>

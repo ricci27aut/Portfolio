@@ -2,7 +2,7 @@
 
 section {
     background-image: url('/assets/backgrounds/background-landing.png');
-    background-size: 100% 98vh;
+    background-size: 100% min(98vh, 980px);
     background-position: top;
     background-repeat: no-repeat;
     height: 100vh;

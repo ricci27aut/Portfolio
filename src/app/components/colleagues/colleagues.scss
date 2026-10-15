@@ -17,7 +17,7 @@
     align-items: flex-end;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     padding-right: 20px;
 
     .suptittle-container {
@@ -46,65 +46,68 @@
     }
 
     @keyframes appearFromLeft {
-    0% {
-      clip-path: inset(0 0 0 100%);
+        0% {
+            clip-path: inset(0 0 0 100%);
+        }
+
+        10% {
+            clip-path: inset(0 0 0 0);
+        }
     }
-    10% {
-        clip-path: inset(0 0 0 0);
-    }
-}
 
 }
 
 .colleagues-notes {
-    width: 70%;
+    width: 95%;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    padding: 0 20px;
+    box-sizing: border-box;
+    padding: 0px 40px;
 
     .note-style {
         background-image: url('/assets/images/red-note-1.png');
-        background-size: 512px 320px;
+        background-size: 100% 100%;
         background-position: center;
         background-repeat: no-repeat;
-        width: 515px;
+        width: 95%;
+        max-width: 515px;
         height: 325px;
         padding: 50px;
 
-        .name-area{
+        .name-area {
             height: 80%;
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
 
-            h3{
+            h3 {
                 display: flex;
                 align-items: center;
 
-                img{
+                img {
                     width: 24px;
                     height: 24px;
                 }
 
-                &:hover{
+                &:hover {
                     color: $color-white-primary;
                 }
             }
 
-            .linkin-profil{
+            .linkin-profil {
                 cursor: pointer;
             }
         }
 
         &:hover {
-              background-image:
+            background-image:
                 url('/assets/icons/text-decoration/note-hover.svg'),
                 url('/assets/images/red-note-1.png');
-            .name-area{
-                span{
+
+            .name-area {
+                span {
                     color: $color-white-primary;
                 }
             }
@@ -138,5 +141,57 @@
         &:hover {
             z-index: 5;
         }
+    }
+}
+
+@media(max-width: 1040px) {
+
+    .colleagues{
+        height: fit-content;
+    }
+
+    h1 {
+        width: 100%;
+        text-align: right;
+    }
+
+    .colleagues-notes {
+        width: 100%;
+        padding: 0px 10px;
+        flex-direction: column;
+    }
+
+    .note-3,
+    .note-2,
+    .note-1 {
+        position: static !important;
+    }
+
+    .note-3 {
+        transform: rotate(5deg) !important;
+    }
+
+    .note-1 {
+        transform: rotate(-5deg) !important;
+    }
+
+    .note-style {
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+
+    .note-3 {
+        transform: rotate(5deg) !important;
+    }
+}
+
+@media(max-width: 400px) {
+
+    .name-area {
+        height: 65% !important;
+    }
+
+    .note-style {
+        padding: 20px !important;
     }
 }

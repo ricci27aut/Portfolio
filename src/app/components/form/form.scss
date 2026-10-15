@@ -40,6 +40,8 @@
     .form-container {
         display: flex;
         justify-content: space-between;
+        box-sizing: border-box;
+        margin: 0 40px;
     }
 }
 
@@ -48,7 +50,7 @@
     flex-direction: column;
     align-items: flex-start;
     row-gap: 30px;
-    width: 40%;
+    width: 50%;
     margin-bottom: 55px;
 
     h2 {
@@ -58,7 +60,7 @@
     }
 
     h1 {
-        font-size: 64px;
+        font-size: clamp(42px, calc(34.67px + 2.292vw), 64px);
         font-weight: 700;
         font-style: Bold;
         width: 80%;
@@ -87,7 +89,7 @@
     align-items: center;
     justify-content: flex-end;
     width: 40%;
-  
+
 
     .form-inputs {
         width: 100%;
@@ -110,7 +112,7 @@
             }
         }
 
-        .alert{
+        .alert {
             color: transparent;
             font-size: 14px;
             font-weight: 400;
@@ -131,7 +133,7 @@
         width: 100%;
         display: flex;
         justify-content: flex-end;
-      
+
     }
 }
 
@@ -150,7 +152,7 @@
     .check-boxs {
         border: 2px solid #797EF3;
         width: 24px;
-        height: 24px;
+        height: clamp(18px, 2vw, 24px);
         border-radius: 4px;
         cursor: pointer;
 
@@ -221,23 +223,76 @@ label {
 }
 
 @keyframes scaleAnimation {
-        0% {
-            clip-path: inset(0 100% 0 0);
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    10% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    70% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    80% {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    100% {
+        clip-path: inset(0 100% 0 0);
+    }
+}
+
+@media(max-width: 1040px) {
+
+    .form-section {
+        height: 1200px !important;
+        justify-content: flex-start;
+        padding-top: 180px;
+
+        h1 {
+            position: relative;
+            z-index: 1;
+            width: 100%;
         }
 
-        10% {
-            clip-path: inset(0 0 0 0);
+        &::before {
+            background-size: 100% 1200px;
         }
 
-        70% {
-            clip-path: inset(0 0 0 0);
-        }
+    }
 
-        80% {
-            clip-path: inset(0 100% 0 0);
-        }
+    .form-container {
+        margin: 0 !important;
+        flex-direction: column;
+        align-items: center;
+    }
 
-        100% {
-            clip-path: inset(0 100% 0 0);
+    .text-area {
+        width: 100%;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+}
+
+@media(max-width: 536px) {
+    .form-section {
+        height: 1400px !important;
+        padding-top: 240px;
+
+        &::before {
+            background-size: 100% 1400px;
         }
     }
+
+    .name-tag {
+        position: absolute;
+        top: auto !important;
+        bottom: calc(210% + 20px);
+        right: 0;
+        z-index: 0;
+    }
+}

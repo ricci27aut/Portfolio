@@ -13,19 +13,23 @@
                 <div class="image-container" [routerLink]="['/projekts', projekts[0].id || 'Join']">
                     <div class="pc-image-warp">
                         <img class="pc-image" src="assets/images/laptop.png">
-                        <app-to-form-btn btnName="Project details" href="/projects"
+                        <app-to-form-btn class="desktop-btn" btnName="Project details" href="/projects"
                             toComponent="project-details"></app-to-form-btn>
                     </div>
                     <img class="details-icon" src="assets/images/check-ditails.png">
                 </div>
                 <div>
                     <h2>join</h2>
-                    <p>{{projekts[0].description}} || 'no description available'</p>
+                    <p>{{projekts[0].description || 'no description available'}}</p>
+                </div>
+                <div class="mobile-btn">
+                    <app-to-form-btn btnName="Project details" color="black" href="/projects"
+                        toComponent="project-details"></app-to-form-btn>
                 </div>
             </div>
         </div>
     </article>
-    <article class="max-width">
+    <article class="max-width mobile-projects">
         <app-projekts style="width: 100%;"></app-projekts>
     </article>
 </section>

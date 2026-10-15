@@ -110,10 +110,11 @@
 
 .skills {
     position: relative;
+    padding-right: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 840px;
+    max-width: 1040px;
     min-height: 266px;
 
     .skill-icon-container {
@@ -160,7 +161,7 @@
     height: 200px;
     position: absolute;
     top: 0;
-    right: -200px;
+    right: 0;
     transform: rotate(8deg);
     background-image: url('/assets/icons/skills/papper-pull/papper-pull-1.svg');
     background-repeat: no-repeat;
@@ -200,6 +201,7 @@
     .title-container {
         width: 100%;
         text-align: end;
+        margin-right: 20px;
     }
 
     .pull-over-reverse {
@@ -213,6 +215,10 @@
         background-size: 100% 1060px;
         justify-content: start;
     }
+
+    .skills {
+        padding-right: 0px;
+    }
 }
 
 @media(max-width: 720px) {
@@ -220,7 +226,7 @@
         height: 1160px;
         background-size: 100% 1160px;
         padding-left: 5px;
-          padding-right: 5px;
+        padding-right: 5px;
     }
 
     .pull-over-reverse {
@@ -235,7 +241,7 @@
     }
 
     .skill-icon-container {
-        justify-content: center!important;
+        justify-content: center !important;
 
         img {
             width: 56px !important;
@@ -243,38 +249,49 @@
             filter: grayscale(0%) !important;
         }
     }
+
+    .text-area {
+        background-size: 98% 100% !important;
+    }
 }
 
 @media(max-width: 560px) {
 
-     .skill-icon-container {
-         .skill-icon-container {
+    .skill-icon-container {
+        .skill-icon-container {
             width: 120px !important;
-        }}
-  
+        }
+    }
+
 }
 
-@media(max-width: 520px) {
+@media(max-width: 491px) {
     .pull-over-reverse {
         top: 500px;
+    }
+
+    .text-area {
+        font-size: 16px !important;
     }
 }
 
 @media(max-width: 408px) {
-     .skill-icon-container {
+    .skill-icon-container {
         font-size: 16px;
-         .skill-icon-container {
-            width: 80px !important;
-        }}
 
-        .pull-over-reverse {
+        .skill-icon-container {
+            width: 80px !important;
+        }
+    }
+
+    .pull-over-reverse {
         top: 400px;
     }
 }
 
 @media(max-width: 330px) {
 
-        .pull-over-reverse {
+    .pull-over-reverse {
         top: 500px;
     }
 }

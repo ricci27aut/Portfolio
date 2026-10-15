@@ -47,9 +47,9 @@
                     <span class="privacy-policy">
                         <div class="check-boxs" (click)="privecy = !privecy; privacyAlertShown = false"><img
                                 [ngClass]="privecy === true ? '' : 'dnone'" src="assets/icons/Check.png"
-                                alt="Check Box"></div>I've read the <a routerLink="/privacy-policy">privacy policy</a>
+                                alt="Check Box"></div><span>I've read the <a routerLink="/privacy-policy">privacy policy</a>
                         and agree to the
-                        processing of my data as outlined.
+                        processing of my data as outlined.</span>
                     </span>
                     <p class="alert" [ngStyle]="{'color': privacyAlertShown ? '#F87A55' : 'transparent'}">Please accept the privacy policy.</p>
                 </div>
@@ -57,7 +57,7 @@
                         (click)="checkInput()"></app-to-form-btn></div>
             </form>
         </div>
-        <app-footer></app-footer>
+  <app-footer></app-footer>
     </article>
 
 </section>
