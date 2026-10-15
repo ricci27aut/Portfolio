@@ -6,7 +6,8 @@ export const projektsData = [
     image: 'assets/images/join.svg',
     myWork: 'Short text that describes your role or the workflow for this specific project. Let a recruiter know more about your knowledge and ability to work independently or collaboratively in a structured way.',
     duration: '5 weeks',
-    technologies: ['CSS', 'HTML', 'JavaScript']
+    technologies: ['CSS', 'HTML', 'JavaScript'],
+    gitLink: 'https://github.com/your-repo/join'
   },
   {
     id: 'El-Pollo-Loco',
@@ -15,7 +16,8 @@ export const projektsData = [
     image: 'assets/images/Pollo.svg',
     myWork: 'Short text that describes your role or the workflow for this specific project. Let a recruiter know more about your knowledge and ability to work independently or collaboratively in a structured way.',
     duration: '5 weeks',
-    technologies: ['CSS', 'HTML', 'JavaScript']
+    technologies: ['CSS', 'HTML', 'JavaScript'],
+    gitLink: 'https://github.com/your-repo/El-Pollo-Loco'
   },
   {
     id: 'DABubble',
@@ -24,6 +26,7 @@ export const projektsData = [
     image: 'assets/images/DABubble.svg',
     myWork: 'Short text that describes your role or the workflow for this specific project. Let a recruiter know more about your knowledge and ability to work independently or collaboratively in a structured way.',
     duration: '5 weeks',
-    technologies: ['SCSS', 'HTML', 'TypeScript', 'Angular']
+    technologies: ['SCSS', 'HTML', 'TypeScript', 'Angular'],
+    gitLink: 'https://github.com/your-repo/DABubble'
   }
 ];
