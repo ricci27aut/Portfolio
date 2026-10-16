@@ -1,4 +1,4 @@
-<header>
+<header style="display: none;">
     <h2>RS</h2>
     <div class="nav-links">
         <a class="menu-item about-me" routerLink="/" fragment="about-me">About me<img
@@ -22,3 +22,35 @@
         </div>
     </div>
 </header>
+
+<section class="menu-header-mobile">
+    <h2>RS</h2>
+    <img src="assets/icons/menu-mobile.svg">
+
+    <article>
+        <h2>RS</h2>
+        <img src="assets/icons/menu-mobile.svg">
+        <div class="nav-links">
+            <a class="menu-item about-me" routerLink="/" fragment="about-me">About me<img
+                    src="assets/icons/text-decoration/decoration-circle.png"></a>
+            <a class="menu-item skills" routerLink="/" fragment="skills">Skills<img
+                    src="assets/icons/text-decoration/decoration-line.png"></a>
+            <a class="menu-item projects" routerLink="/" fragment="projects">Projects<img
+                    src="assets/icons/text-decoration/decoration-wave.png"></a>
+            <a class="menu-item contact" routerLink="/" fragment="contact">Contact<img
+                    src="assets/icons/text-decoration/decoration-dopple-line.png"></a>
+        </div>
+        <div class="language-switcher">
+            <div (click)="language.set('en')" class="language-option">
+                <img src="assets/icons/slider/slider-text-decoration.png">
+                <p [class.language-active]="language() === 'en'">EN</p>
+            </div>
+            <img
+                [src]="language() === 'en' ? 'assets/icons/slider/slider-on.png' : 'assets/icons/slider/slider-off.png'">
+            <div (click)="language.set('de')" class="language-option">
+                <img src="assets/icons/slider/slider-text-decoration.png">
+                <p [class.language-active]="language() === 'de'">DE</p>
+            </div>
+        </div>
+    </article>
+</section>

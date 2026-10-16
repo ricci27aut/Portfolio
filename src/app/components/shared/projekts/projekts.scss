@@ -4,7 +4,8 @@ section {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
-
+    gap: 20px;
+    
     article {
         flex: 1;
         min-width: 0;

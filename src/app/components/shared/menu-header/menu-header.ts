@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-menu-header',
   imports: [CommonModule, RouterModule],
   templateUrl: './menu-header.html',
-  styleUrl: './menu-header.scss',
+  styleUrls: ['./menu-header.scss', './menu-heder-mobile.scss'],
 })
 export class MenuHeader {
     language = signal("de");

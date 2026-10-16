@@ -6,7 +6,8 @@
         </div>
         <article>
             <div class="project-text-container">
-                <h1>{{projekts[projectIndex].title}}<img src="assets/icons/text-decoration/short-blueLine.png" alt="Underline Title"></h1>
+                <h1>{{projekts[projectIndex].title}}<img src="assets/icons/text-decoration/short-blueLine.png"
+                        alt="Underline Title"></h1>
 
                 <div class="description">
                     <h2 class="margin-bottom-15px">Description</h2>
@@ -21,7 +22,8 @@
                     <h2 class="Duration">Duration:<p>{{projekts[projectIndex].duration}}</p>
                     </h2>
                     <div class="tech">
-                        <h3 *ngFor="let tech of projekts[projectIndex].technologies"><img src="assets/icons/skills/{{tech}}.svg">{{tech}}</h3>
+                        <h3 *ngFor="let tech of projekts[projectIndex].technologies"><img
+                                src="assets/icons/skills/{{tech}}.svg">{{tech}}</h3>
                     </div>
                 </div>
             </div>
@@ -29,13 +31,19 @@
                 <div class="project-images">
                     <img class="project-image" src="{{projekts[projectIndex].image}}" alt="Project Image">
                     <img class="check-ditails" src="assets/images/check-ditails.png">
-                    
+
                 </div>
                 <div class="project-buttons">
                     <app-to-form-btn btnName="GitHub"></app-to-form-btn>
                     <app-to-form-btn btnName="Live Test"></app-to-form-btn>
                 </div>
-                <div class="next-project"><h2 (click)="nextProject()">Next Project<img class="yellow-arrow" src="assets/icons/yellow-arrow.png" alt="Next Project Arrow"></h2></div>
+                <div class="next-project">
+                    <div class="back-btn-mobile">
+                        <h2 routerLink="/"><img src="assets/icons/back-orange.png">Go Back</h2>
+                    </div>
+                    <h2 (click)="nextProject()">Next Project<img class="yellow-arrow"
+                            src="assets/icons/yellow-arrow.png" alt="Next Project Arrow"></h2>
+                </div>
             </div>
         </article>
     </section>

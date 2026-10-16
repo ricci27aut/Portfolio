@@ -27,6 +27,26 @@ section {
         height: 100%;
     }
 
+    .back-btn-mobile {
+        display: none;
+        align-items: center;
+        justify-content: flex-start;
+
+        h2 {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            gap: 10px;
+
+            font-weight: 700;
+            font-style: bold;
+
+            &:hover {
+                color: $btn-hover;
+            }
+        }
+    }
+
     .back-btn {
         width: 100%;
         display: flex;
@@ -65,7 +85,7 @@ section {
     gap: 40px;
 
     h1 {
-        font-size: 64px;
+        font-size: clamp(41px, 5vw, 64px);
         font-weight: 700;
         font-style: bold;
         display: flex;
@@ -128,9 +148,13 @@ section {
 .project-image-container {
     width: 100%;
     max-width: clamp(310px, 100%, 560px);
+    height: 100%;
+    max-height: auto;
 
     .project-images {
         position: relative;
+        width: 100%;
+        height: 100%;
 
         .project-image {
             border-radius: 30px;
@@ -145,6 +169,10 @@ section {
             right: -60px;
         }
 
+    }
+
+    .check-ditails {
+        display: none;
     }
 
     .project-buttons {
@@ -189,7 +217,7 @@ section {
 
 :host ::ng-deep app-menu-header {
 
-    header{
+    header {
         padding: 0px;
     }
 
@@ -210,36 +238,95 @@ section {
 }
 
 @media (max-width: 1040px) {
-    app-menu-header{
+    app-menu-header {
         display: none;
     }
 
-   
-  main {
-    position: relative;
-    isolation: isolate;
-    background-image: none;
-    margin-top: 0;
-    padding-top: 0;
+    section {
+        margin-top: 50px !important;
+    }
 
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        height: 100vh;
+    main {
+        position: relative;
+        isolation: isolate;
+        background-image: none;
+        margin-top: 0;
+        padding-top: 0;
+        overflow: hidden;
 
-        background-image: url('/assets/images/ripped-paper/note-book.png');
-        background-size: cover;
-        background-position: center top;
-        background-repeat: no-repeat;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 160px;
+            background: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0.684),
+                    transparent);
+            pointer-events: none;
+            z-index: -1;
+        }
 
-        transform: rotate(90deg);
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            --background-scale: clamp(0, calc((1040px - 100vw) / 720px), 1);
+            width: calc(100vh + 45vh * var(--background-scale));
+            height: calc(100vw + 42vw * var(--background-scale));
+
+            background-image: url('/assets/images/ripped-paper/note-book.png');
+            background-size: cover;
+
+            background-repeat: no-repeat;
+
+            transform-origin: top left;
+            transform: rotate(90deg) translateY(-100%);
+
+        }
+    }
+
+    .back-btn {
+        display: none !important;
+    }
+
+    .back-btn-mobile {
+        display: flex !important;
+    }
+
+    article {
+        flex-direction: column;
+    }
+
+    .project-text-container {
+        max-width: none;
+    }
+
+    .project-image-container {
+        margin-top: 70px;
+        min-width: 0;
+        max-width: 100%;
+
+        .project-images .project-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .next-project {
+        align-items: center;
+        justify-content: space-between !important;
+        margin-bottom: 20px;
     }
 }
 
-article{
-    display: flex;
-    flex-direction: column;
-}
+@media (max-width: 700px) {
+
+    main {
+        padding: 20px 10px !important;
+    }
 }
